@@ -45,12 +45,19 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href={% url 'accounts:login' %}>Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href={% url 'accounts:logout' %}>Logout</a>
-                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href={% url 'accounts:logout' %}>Logout</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href={% url 'accounts:login' %}>Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={% url 'accounts:signup' %}>Registro</a>
+                        </li>
+                    {% endif %}
+                    
                 </ul>
             </div>
         </div>
