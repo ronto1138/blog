@@ -21,4 +21,6 @@ urlpatterns = [
     path('', views.index.as_view(), name='index'),
     path('admin/', admin.site.urls),
     path('accounts/',include('accounts.urls', namespace='accounts')),
+    path('test/', views.TestPage.as_view(), name="test"),
+    path('thanks/', views.ThanksPage.as_view(), name="thanks"),
 ]
