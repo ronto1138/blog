@@ -1,8 +1,5 @@
-from ssl import create_default_context
-from django.contrib.auth.signals import user_logged_in
 from django.db import models
-from django.utils.text import slugify
-from django.utils import reverse
+from django.urls import reverse
 from django.conf import settings
 
 import misaka
